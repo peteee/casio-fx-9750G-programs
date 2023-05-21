@@ -1,0 +1,7 @@
+'ProgramMode:RUN
+Prog "RAHMEN2"
+1->A
+Lbl 1:Horizontal 1.A
+A+1->A
+A<50=>Goto 1
+A=50=>Prog "LUKE"

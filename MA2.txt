@@ -1,0 +1,13 @@
+'ProgramMode:RUN
+Prog "RAHMEN2"
+While Getkey<>31
+Text 5,5,"GRUNDRECHNUNG_-_1
+Text 12,5,"LOGARITHMEN_-_2"
+Text 19,5,"WINKEL_-_3"
+Text 26,5,"STOECHI_-_4"
+Text 33,5,"QUADER_-_5"
+Text 40,5,"PROBE_-_6"
+Text 47,5,"WEITER_-_7"
+Text 54,78,"PRESS [EXE]"
+WhileEnd
+Return

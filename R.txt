@@ -1,0 +1,9 @@
+'ProgramMode:RUN
+Prog "RAHMEN2"
+Lbl 0:5->A
+5->B
+Lbl 1
+F-Line A,2,6,B
+A+3->A
+B+0.2->B
+Goto 1

@@ -1,0 +1,90 @@
+'ProgramMode:RUN
+Lbl 4
+ClrText
+Prog "MA2"
+?->A
+If A=1
+Then Goto 1
+Else Goto E
+Lbl E:If A=2
+Then Goto 2
+Else Goto F
+Lbl F:If A=3
+Then Goto 5
+Else Goto G
+Lbl G:If A=4
+Then Goto 6
+Else Goto H
+Lbl H:If A=5
+Then Goto 7
+Else Goto I
+Lbl I:If A=6
+Then Goto 8
+Else Goto 0
+Lbl 0:Prog "MA3"
+?->B
+If B=1
+Then Goto A
+Else Goto B
+Lbl B:If B=2
+Then Goto C
+Else Goto K
+Lbl K:If B=3
+Then Goto D
+Else Goto N
+Lbl N:If B=4
+Then Goto L
+Else Goto O
+Lbl O:If B=5
+Then Goto M
+Else Goto R
+Lbl A:"A"?->A
+"B"?->C
+"HOEHE"?->B
+"HOEHE MANTELFLAECHE B:":Sqrt(((A/2)^<2>)+B^<2>)Disps"HOEHE MANTELFLAECHE A:":Sqrt(((C/2)^<2>)+B^<2>)Disps"MANTELFLAECHENINHALT:":A*(Sqrt((C/2)^<2>+B^<2>))+C*(Sqrt((A/2)^<2>+B^<2>))->PDisps"FLAECHENINHALT:":P+A*CDisps"VOLUMEN:":1frac3*A*C*BDispsGoto 3
+Lbl C:"A"?->A
+"MANTELFLAECHE:":((3*A^<2>)/4)*Sqrt(3)Disps"FLAECHENINHALT:":A^<2>*Sqrt(3)Disps"VOLUMEN:":((A^3)/12)*Sqrt(2)DispsGoto 3
+Lbl D:"A"?->C
+"DIAGONALE:":C*Sqrt(3)Disps"MANTELFLAECHE:":4*A^<2>Disps"OBERFLAECHE:":6*A^<2>Disps"VOLUMEN:":A^3DispsGoto 3
+Lbl L
+"A"?->A
+"HOEHE"?->B
+"MANTELFLAECHENINHALT:":3*A*BDisps"FLAECHENINHALT:":Afrac2*(A*(Sqrt(3))+6*B)Disps"VOLUMEN:":(A^<2>/4)*B*Sqrt(3)DispsGoto 3
+Lbl R:"_<r>_"?->A
+"OBERFLAECHE:":4*pi*A^<2>Disps"VOLUMEN:":4frac3*pi*A^3DispsGoto 3
+Lbl M
+"_<r>_"?->A
+"HOEHE"?->B
+"D:":2*ADisps"MANTELFLAECHENINHALT:":2*pi*A*BDisps"FLAECHENINHALT:":2*pi*A*(A+B)Disps"VOLUMEN:":pi*A^<2>*BDispsGoto 3
+Lbl 1:"X"?->X
+"Y"?->Y
+"X_+_Y":X+YDisps"X_-_Y":X-YDisps"X_*_Y":X*YDisps"X_/_Y":X/YDisps"X_^<2>_":X*XDisps"_Sqrt_X":SqrtXDisps"Y_^<2>_":Y*YDisps"_Sqrt_Y":SqrtYDispsGoto 3
+Lbl 2:"POTENZ"?->C
+"BASIS"?->D
+"EXPONENT:":(log C)/(log D)DispsGoto 3
+Lbl 5:"GRAD DES WINKELS"?->W
+"_sin _:":sin WDisps"_cos _:":cos WDisps"_tan _:":tan WDispsGoto 3
+Lbl 6:ClrText
+Locate 2,2,"SCHEMA:":"       ":ClrText
+Locate 9,5,"A _+_ B _-__->_ AB":"          ":ClrText
+"MOL DES GESUCHTEN STOFFES"?->A
+"MOLARE MASSE DES GESUCHTEN STOFFES"?->B
+"MASSE DES GEGEBENEN STOFFES"?->C
+"MOL DES GEGEBENEN STOFFES"?->D
+"MOL.MASSE DES GEGEBENEN STOFFES"?->E
+"MENGE DES GESUCHTEN STOFFES:":(C*A*B)/(D*E)DispsGoto 3
+Lbl 7:"A"?->A
+"B"?->B
+"C"?->C
+"VOLUMEN:":A*B*CDisps"OBERFLAECHENINHALT:":2(A*B+A*C+B*C)Disps"MANTELFLAECHEINHALT:":2*(A*C+B*C)Disps"DIAGONALE:":Sqrt(A^<2>+B^<2>+C^<2>)DispsGoto 3
+Lbl 8:"ALLES,WAS LINKS VOM = STEHT"?->X
+"ALLES,WAS RECHTS VOM = STEHT"?->Y
+XDisps"IST GLEICH"DispsYDispsIf X=Y
+Then "WAHRE AUSSAGE"
+Else "FALSCHE AUSSAGE"
+Goto 3
+Lbl 3:"NOCHMAL=_=>_0           ZURUECK=_=>_1"
+?->Z
+If Z=0
+Then Goto 4
+Else Prog "WINSTART"

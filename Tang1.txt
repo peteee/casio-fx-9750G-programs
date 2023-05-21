@@ -1,0 +1,6 @@
+'ProgramMode:RUN
+ClrText
+"_GraphY_1(_Gra_ph_-_Menue)"
+"Beruehrungsstelle XB="?->X
+X=A
+"Funktionswert an der Beruehrungsstelle YB=":GraphY1->BDisps"ANSTIEG M der TANGENTE =":d/dx(GraphY1,X)->MDisps"ABSOLUTGLIED N der TANGENTE =":B-(X*M)

@@ -1,0 +1,120 @@
+'ProgramMode:RUN
+'Der Aut_or_ dieses Programmes ist Jens Bachmann, 12 EN IV, Johannes_-_Kepler Gymnasium Chemnitz
+" _&B_omialverteilung          V2.0"
+"Wahrscheinlichkeit:"
+"p="?->P
+"Versuche:"
+"n="?->N
+(N+1)*P->A
+If Frac A=0:Then "kmax1":ADispsA-1->A
+"kmax2":ADispsIfEnd
+If Frac A<>0:Then A-Frac A->A
+"kmax":ADispsIfEnd
+"Treffer:"
+"k="?->K
+ClrText
+"1. Weniger als k"
+"2. Hoechstens k"
+"3. Genau k"
+"4. Mindestens k"
+"5. Mehr als k"
+?->D
+If D=1:Then N*P*(1-P)->V
+If V>9:Then ((K-1)-N*P+0.5)/Sqrt(N*P*(1-P))->S
+ProbP(S)->S
+IfEnd
+If V<=9:Then N+1->M
+1-P->Q
+ln (P/Q)->R
+N*ln (Q)->L
+e^L->S
+For 1->X To K-1
+L+R+ln (M/X-1)->L
+S+e^L->S
+Next
+IfEnd
+N*P->E
+N*P*(1-P)->V
+K=0=>0->S
+"_ProbP(_X<k)=":SDisps"_Exa_(X)=":EDisps"V(X)=":VDispsIfEnd
+If D=2:Then N*P*(1-P)->V
+If V>9:Then (K-N*P+0.5)/Sqrt(N*P*(1-P))->S
+ProbP(S)->S
+IfEnd
+If V<=9:Then N+1->M
+1-P->Q
+ln (P/Q)->R
+N*ln (Q)->L
+e^L->S
+For 1->X To K
+L+R+ln (M/X-1)->L
+S+e^L->S
+Next
+IfEnd
+N*P->E
+E*(1-P)->V
+"_ProbP(_X_<=_k)=":SDisps"_Exa_(X)=":EDisps"V(X)=":VDispsIfEnd
+If D=3:Then N*P*(1-P)->V
+If V>9:Then (1/Sqrt(2pi*N*P*(1-P)))*e^((-)1frac2*((K-N*P)/Sqrt(N*P*(1-P)))^<2>)->A
+IfEnd
+If V<=9:Then N+1->M
+1-P->Q
+ln (P/Q)->R
+N*ln (Q)->L
+For 1->I To K
+L+R+ln (M/I-1)->L
+Next
+e^L->A
+IfEnd
+N*P->E
+N*P*(1-P)->V
+"_ProbP(_X=k)=":ADisps"_Exa_(X)=":EDisps"V(X)=":VDispsIfEnd
+If D=4:Then N*P*(1-P)->V
+If V>9:Then ((K-1)-N*P+0.5)/Sqrt(N*P*(1-P))->S
+1-ProbP(S)->S
+IfEnd
+If V<=9:Then 1-P->Q
+N+1->M
+ln (P/Q)->R
+N*ln (Q)->L
+e^L->S
+For 1->X To N
+L+R+ln (M/X-1)->L
+S+e^L->S
+Next
+N*ln (Q)->L
+e^L->T
+For 1->X To K-1
+L+R+ln (M/X-1)->L
+T+e^L->T
+Next
+S-T->S
+IfEnd
+N*P->E
+N*P*(1-P)->V
+K=0=>1->S
+"_ProbP(_X_>=_k)=":SDisps"_Exa_(X)=":EDisps"V(X)=":VDispsIfEnd
+If D=5:Then N*P*(1-P)->V
+If V>9:Then (K-N*P+0.5)/Sqrt(N*P*(1-P))->S
+1-ProbP(S)->S
+IfEnd
+If V<=9:Then 1-P->Q
+N+1->M
+ln (P/Q)->R
+N*ln (Q)->L
+e^L->S
+For 1->X To N
+L+R+ln (M/X-1)->L
+S+e^L->S
+Next
+N*ln (Q)->L
+e^L->T
+For 1->X To K
+L+R+ln (M/X-1)->L
+T+e^L->T
+Next
+S-T->S
+IfEnd
+N*P->E
+N*P*(1-P)->V
+"_ProbP(_X>k)=":SDisps"_Exa_(X)=":EDisps"V(X)=":VDispsIfEnd

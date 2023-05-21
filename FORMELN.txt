@@ -1,0 +1,55 @@
+'ProgramMode:RUN
+Prog "RAHMEN2"
+Text 7,10,"1. N_Xrt_B=A,DENN: A_^_N=B"
+Text 21,7,"WURZELGESETZE: "
+Text 14,10,"2. N_Xrt_A_^_M=(N_Xrt_A)_^_M"
+Text 27,10,"1. N_Xrt_A=A_^_1_frac_N"
+Text 34,10,"2. N_Xrt_A_/_N_Xrt_B=(A_/_B)_^_1_frac_N"
+Text 41,10,"3."
+While Getkey<>31
+Text 55,10,"[EXE]_(-)_WEITER"
+WhileEnd
+Prog "RAHMEN2"
+Text 7,8,"POTENZGESETZE:"
+Text 15,10,"1. N_Xrt_A_*_N_Xrt_B=N_Xrt_A_*_B"
+Text 22,10,"2. N_Xrt_M_Xrt_A=(N_*_M)_Xrt_A"
+Text 29,7,"(3. (N_Xrt_A)_^_M=N_Xrt_A_^_M )"
+While Getkey<>31
+Text 55,10,"[EXE]_(-)_WEITER"
+WhileEnd
+Prog "RAHMEN2"
+Text 7,8,"LOGARITHMEN:"
+Text 15,10,"1. A_^_B=C"
+Text 22,10,"2. B=_log _C_->_A_=>_C=A_^_X_=>_X=B"
+Text 29,10,"3. LGB=_log _B_->_10"
+Text 36,8,"TR: _log _B_frac__log _A=_log _B_->_A"
+While Getkey<>31
+Text 55,10,"[EXE]_(-)_WEITER"
+WhileEnd
+Prog "RAHMEN2"
+Text 7,8,"LOGARITHMENGESETZE:"
+Text 15,10,"1. A_^_(U_*_V)=_log _A_^_U_+__log _A_^_V"
+Text 22,10,"2. _log _U_->_A_^_X=X_log _U_->_A"
+While Getkey<>31
+Text 55,10,"[EXE]_(-)_WEITER"
+WhileEnd
+Prog "RAHMEN2"
+Text 7,8,"RECHTW.DREIECK"
+Text 15,10,"C_^<2>_=A_^<2>__+_B_^<2>_"
+Text 21,10,"H_^<2>_=P_*_Q            _sin _A=A_/_C"
+Text 28,10,"A_^<2>_=P_*_C            _cos _A=B_/_C"
+Text 35,10,"B_^<2>_=Q_*_C            _tan _A=A_/_B"
+While Getkey<>31
+Text 55,10,"[EXE]"
+WhileEnd
+Cls
+Prog "RAHMEN2"
+Text 7,8,"DREIECK
+Text 15,10,"A_^<2>_=B_^<2>__+_C_^<2>__-_2_*_B_*_C_*__cos _ALPHA"
+Text 22,10,"A_/__sin _ALPHA=B_/__sin _BETA=C_/__sin _GAMMA
+Text 29,10,"_cos _ALPHA=B_^<2>__+_C_^<2>__-_A_^<2>__/_2BC"
+Text 35,10,"FLAECHE=0.5_*_C_*_A_*__sin _BETA"
+While Getkey<>31
+Text 55,10,"[EXE]_->_EXIT"
+WhileEnd
+'_Prog _"WINDOWS"

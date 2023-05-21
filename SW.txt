@@ -1,0 +1,35 @@
+'ProgramMode:RUN
+Cls
+ViewWindow 1,126,1,1,64,1
+1->A:1->B:126->C
+Lbl 1:Cls
+
+Lbl 3:F-Line A,B,C,B
+B+1->B
+If B<65
+Then Goto 3
+IfEnd
+Text 30,12,"BY PETER OBERLAENDER, 1999"
+For 1->A To 300 Step 1
+Next
+Text 30,12,"                            "
+Text 9,8,"ALONG TIME AGO, IN A GALAXY"
+Text 16,8,"FAR, FAR AWAY..."
+Graph Y=0X+126
+Text 9,8,"                                   "
+Text 16,8,"                   "
+Text 23,12,"                    "
+Prog "P3"
+Text 26,50,"S T A R"
+Text 33,49,"W A R S"
+For 1->Y To 150 Step 1:Next:Text 26,50,"             ":Text 32,49,"             ":Text 27,56,"STAR":Text 33,55,"WARS"
+For 1->Y To 150 Step 1
+Next:Text 27,56,"              ":Text 33,55,"          "
+Text 28,57,"....":Text 32,57,"....":Text 36,57,"               "
+For 1->Y To 200 Step 1
+Next:Text 28,56,"     ":Text 32,56,"      "
+Prog "SW3"
+RclPict 2
+Prog "SW2"
+Graph Y=0X+126
+Prog "SW2000"

@@ -1,0 +1,59 @@
+'ProgramMode:RUN
+ClrText
+"Vekt_or_en"
+"a = axi_+_ayj_+_azk"
+"ax="?->A
+"by="?->B
+"cz="?->C
+ClrText
+"b = bxi_+_byj_+_bzk"
+"bx="?->D
+"by="?->E
+"bz="?->F
+Sqrt((A^<2>+B^<2>+C^<2>)->H
+Sqrt(D^<2>+E^<2>+F^<2>)->I
+AD+BE+CF->S
+Lbl 1
+ClrText
+"1. |a|,|b|, Winkel"
+"2. Skalarprod."
+"3. Vekt_or_prod."
+"4. Ende"
+" "
+"Auswahl"?->W
+ClrText
+W=1=>Goto 2
+W=2=>Goto 3
+W=3=>Goto 4
+W=4=>Goto 5
+Lbl 2
+Locate 1,2,"Betraege u. Winkel"
+Locate 1,4,"|a|="
+Locate 6,4,H
+Locate 1,5,"|b|="
+Locate 6,5,I
+cos^-1 (S/(HI))->Theta
+sin (pifrac2)=1=>180Theta/pi->Theta
+Locate 1,6,"<(a,b)="
+Locate 9,6,Theta
+Locate 19,7,""DispsGoto 1
+Lbl 3
+Locate 1,2,"Skalarprod."
+Locate 1,4,"a_deg_b="
+Locate 6,4,S
+Locate 19,7,""DispsGoto 1
+Lbl 4
+BF-CE->K
+CD-AF->L
+AE-BD->M
+Locate 1,2,"Vekt_or_prod."
+Locate 1,5,"a x b ="
+Locate 9,4,"x ="
+Locate 13,4,K
+Locate 9,5,"y ="
+Locate 13,5,L
+Locate 9,6,"z ="
+Locate 13,6,M
+Locate 19,7,""DispsGoto 1
+Lbl 5
+Locate 1,7,"Whlg.:EXE  Ende:AC/on"

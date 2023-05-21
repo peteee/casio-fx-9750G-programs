@@ -1,0 +1,16 @@
+'ProgramMode:RUN
+0->S
+Lbl 1:S+1->S
+Int 126Ran#+1->A
+Int 64Ran#+1->B
+Int 126Ran#+1->C
+Int 64Ran#+1->D
+Int 64Ran#+1->F
+Int 126Ran#+1->G
+PlotOn A,B
+PlotOn C,B
+PlotOn G,F
+PlotOn C,D
+If S=20
+Then Return
+Else Goto 1

@@ -1,0 +1,33 @@
+'ProgramMode:RUN
+"Die drei Punkte bilden ein Dreieck mit positiven UMLAUFSINN, Winkelmass im Set up: DEG"
+"Ko_or_dinaten des Punktes A"
+"a1="?->A
+"a2="?->B
+"a3="?->C
+"Ko_or_dinaten des Punktes B"
+"b1="?->D
+"b2="?->E
+"b3="?->F
+"Ko_or_dinaten des Punktes C"
+"c1="?->G
+"c2="?->H
+"c3="?->I
+"NORMALENVEKTOR der von A, B und C aufgespannten Ebene"
+D-A->K
+E-B->L
+F-C->M
+G-A->N
+H-B->P
+I-C->Q
+"n1="
+L*Q-M*P->TDisps"n2="
+N*M-Q*K->UDisps"n3="
+K*P-L*N->VDisps"ABSOLUTGLIED d der Ebenengleichung n1x_+_n2y_+_n3z_+_d =0"
+-(T*A+U*B+V*C)Disps"Seitenlaenge (A,B)"
+Sqrt(K^2+L^2+M^2)->ZDisps"Seitenlaenge (A,C)"
+Sqrt(N^2+P^2+Q^2)->YDisps"Seitenlaenge (B,C)"
+Sqrt((G-D)^2+(H-E)^2+(I-F)^2)->XDisps"Innenwinkel ABC"
+cos^-1 ((-K*(G-D)-L*(H-E)-M*(I-F))/(Z*X))Disps"Innenwinkel BCA"
+cos^-1 ((-N*(D-G)-P*(E-H)-Q*(F-I))/(X*Y))Disps"Innenwinkel CAB"
+cos^-1 ((N*K+P*L+Q*M)/(Y*Z))Disps"Flaeche des Dreiecks ABC"
+.5*Sqrt(T^2+U^2+V^2)->W

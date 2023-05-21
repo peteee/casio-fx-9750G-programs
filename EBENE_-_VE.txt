@@ -1,0 +1,7 @@
+'ProgramMode:RUN
+"GIB DIE EBENE MIT P UND DEN BEIDEN RICHTUNGSVEKTOREN EIN:":?->A:?->B:?->C:?->D:?->E:?->F:?->G:?->H:?->I:E*I-H*F->U
+F*G-I*D->V
+D*H-G*E->W
+-A*E*I+A*H*F-B*F*G+B*I*D-C*D*H+C*G*E->X
+"DIE EBENE LAUTET:"
+UDispsVDispsWDispsXDisps

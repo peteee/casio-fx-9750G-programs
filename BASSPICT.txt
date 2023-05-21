@@ -1,0 +1,47 @@
+'ProgramMode:RUN
+Cls
+ViewWindow 1,125,1,64,1
+'_Goto _3
+Horizontal 64
+Horizontal 55
+F-Line 1,55,1,64
+F-Line 31,55,31,64
+F-Line 62,55,62,64
+F-Line 93,55,93,64
+F-Line 125,55,125,64
+Text 56,8,"CAST"
+Text 56,33,"REEL IN"
+Text 56,67,"PROFIT"
+Text 56,96,"GO HOME"
+F-Line 1,17,7,15
+F-Line 7,15,10,13
+F-Line 10,13,20,10
+F-Line 20,10,40,8
+F-Line 40,8,60,10
+F-Line 60,10,90,7
+F-Line 90,7,100,10
+F-Line 100,10,113,13
+F-Line 113,13,125,11
+F-Line 1,12,7,10
+F-Line 7,10,10,8
+F-Line 10,8,20,5
+F-Line 20,5,40,3
+F-Line 40,3,60,5
+F-Line 60,5,90,2
+F-Line 90,2,100,5
+F-Line 100,5,113,8
+F-Line 113,8,125,6
+F-Line 70,54,60,25:F-Line 71,54,60,26:F-Line 72,54,60,25
+StoPict 2
+Graph(X,Y)=(((40sin T)+63),(15cos T+33))
+Circle 33,30,2
+F-Line 30,30,37,30
+Lbl 3:RclPict 2
+F-Line 22,35,27,37
+F-Line 22,33,27,30
+F-Line 100,25,118,19
+F-Line 99,40,118,46
+F-Line 118,47,118,19
+F-Line 48,20,56,10
+F-Line 56,10,75,10
+F-Line 75,10,80,20

@@ -1,0 +1,11 @@
+'ProgramMode:RUN
+Prog "RAHMEN2"
+While Getkey<>31
+Text 5,5,"PYRAMIDE_-_1":Text 12,5,"TETRAETER_-_2"
+Text 19,5,"WUERFEL_-_3"
+Text 26,5,"3_-_S._(-)_PRISMA_-_4"
+Text 33,5,"ZYLINDER_-_5
+Text 40,5,"KUGEL_-_6"
+Text 54,78,"PRESS [EXE]"
+WhileEnd
+Return

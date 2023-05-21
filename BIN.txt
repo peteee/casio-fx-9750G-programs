@@ -1,0 +1,10 @@
+'ProgramMode:RUN
+"N"?->N
+"P"?->P
+"K"?->K
+"K2"?->L
+Lbl 1:Goto A
+Lbl 2:K+1->K
+Lbl A:((NnCrK)*(P^K)*((1-P)^(N-K)))->Z
+ZDispsIf K<=L
+Then Goto 2

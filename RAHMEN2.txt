@@ -1,0 +1,17 @@
+'ProgramMode:RUN
+Cls
+Norm 
+ViewWindow 1,126,1,1,64,1
+Deg
+CoordOff
+GridOff
+AxesOff
+LabelOff
+G-Connect
+BG-None
+DerivOn
+SimulOn
+F-Line 1,64,126,64
+F-Line 126,64,126,1
+F-Line 126,1,1,1
+F-Line 1,1,1,64

@@ -1,0 +1,330 @@
+'ProgramMode:RUN
+'Carsten Gerlach
+'LKMA_-_1, 1997_-_99, Gymnasium Zschopau
+ClrText
+"Lage P_-_g_-_E"
+" "
+"   P  g  E"
+"E  1  2  3"
+"g  4  5"
+"P  6        Auswahl"?->A
+ClrText
+If A=1
+Then "Punkt _-_ Ebene"
+"P1"
+"x1"?->A
+"y1"?->B
+"z1"?->C
+"Ebene"
+"ax_+_by_+_cz=d"
+"a"?->D
+"b"?->E
+"c"?->F
+"d"?->G
+If D<>0
+Then 1->I
+1->J
+(G-E-F)fracD->H
+Else If E<>0
+Then 1->H
+1->J
+(G-D-F)fracE->I
+Else 1->H
+1->I
+(G-D-E)fracF->J
+IfEnd
+IfEnd
+Abs (AD-HD+BE-IE+CF-JF)->K
+D^<2>+E^<2>+F^<2>->L
+ClrText
+"d="
+Locate 3,1,K
+"  _/__Sqrt_"
+Locate 5,2,L
+" ="
+Locate 3,3,K/SqrtL
+Else If A=2
+Then "Gerade _-_ Ebene"
+"Gerade"
+"x0"?->A
+"y0"?->B
+"z0"?->C
+"ax"?->D
+"ay"?->E
+"az"?->F
+"Ebene"
+"ax_+_by_+_cz=d"
+"a"?->P
+"b"?->Q
+"c"?->R
+"d"?->U
+ClrText
+If PD+QE+RF=0
+Then If PA+QB+RC=U
+Then "g _Exp_ E"
+Else "g || E"
+If P<>0
+Then 1->H
+1->I
+(U-R-Q)fracP->G
+Else If Q<>0
+Then 1->G
+1->I
+(U-R-P)fracQ->H
+Else 1->H
+1->G
+(U-P-Q)fracR->I
+IfEnd
+IfEnd
+Abs (PA-PG+QB-QH+RC-RI)->K
+P^<2>+Q^<2>+R^<2>->L
+"d="
+Locate 3,2,K
+"  _/__Sqrt_"
+Locate 5,3,L
+" ="
+Locate 3,4,K/SqrtL
+IfEnd
+Else (U-PA-QB-RC)frac(PD+QE+RF)->T
+"Schnittpunkt:"
+" "
+"S="
+" "
+Locate 4,2,A+TD
+Locate 4,3,B+TE
+Locate 4,4,C+TF
+sin^-1 Abs ((PD+QE+RF)fracSqrt((P^<2>+Q^<2>+R^<2>)(D^<2>+E^<2>+F^<2>)))->W
+sin (pifrac2)=1=>180W/pi->W
+(Int (100W))/100->W
+"Winkel="
+Locate 9,5,W
+Locate 14,5,"_deg_"
+IfEnd
+Else If A=3
+Then "Ebene _-_ Ebene"
+"ax_+_by_+_cz=d"
+"Ebene 1"
+"a"?->H
+"b"?->G
+"c"?->F
+"d"?->E
+"Ebene 2"
+"a"?->D
+"b"?->C
+"c"?->B
+"d"?->A
+ClrText
+If CH=DG And CF=BG And BH=FD
+Then If (H<>0 And DE=HA) Or (G<>0 And EC=GA) Or (F<>0 And EB=FA)DispsThen "E1 = E2"
+Else "E1 || E2"
+If H<>0
+Then 1->J
+1->K
+(E-F-G)fracH->I
+Else If G<>0
+Then 1->I
+1->K
+(E-F-H)fracG->J
+Else 1->I
+1->K
+(E-H-G)fracF->K
+IfEnd
+IfEnd
+If D<>0
+Then 1->M
+1->N
+(A-B-C)fracD->L
+Else If C<>0
+Then 1->N
+1->L
+(A-D-B)fracC->M
+Else 1->L
+1->M
+(A-C-D)fracB->N
+IfEnd
+IfEnd
+Abs (IH-LH+JG-MG+KF-NF)->O
+H^<2>+G^<2>+F^<2>->P
+"d="
+Locate 3,2,O
+"  _/__Sqrt_"
+Locate 5,3,P
+" ="
+Locate 3,4,O/SqrtP
+IfEnd
+Else "Schnittgerade"
+GB-FC->I
+FD-BH->J
+HC-GD->K
+If D<>0
+Then If J<>0
+Then (DE+HC-DG-HA)fracJ->Z
+(A-C-BZ)fracD->X
+1->Y
+Else (DE+BH-DF-HA)frac(-)K->Y
+(A-B-CY)fracD->X
+1->Z
+IfEnd
+Else If C<>0
+Then If K<>0
+Then (CE+BG-FC-GA)fracK->X
+(A-B-DX)fracC->Y
+1->Z
+Else (CE+DG-HC-GA)frac(-)I->Z
+(A-D-BZ)fracC->Y
+1->X
+IfEnd
+Else If I<>0
+Then (BE+FD-BH-FA)fracI->Y
+(A-D-CY)fracB->Z
+1->X
+Else (BE+FC-GB-FA)frac(-)J->X
+(A-C-DX)fracB->Z
+1->Y
+IfEnd
+IfEnd
+IfEnd
+Locate 1,3,"x="
+Locate 4,2,X
+Locate 4,3,Y
+Locate 4,4,Z
+Locate 14,3,"_+_t "
+Locate 17,2,I
+Locate 17,3,J
+Locate 17,4,K
+Locate 1,5,"Winkel="
+cos^-1 Abs ((HD+GC+FB)fracSqrt((H^<2>+G^<2>+F^<2>)(D^<2>+C^<2>+B^<2>)))->W
+sin (pifrac2)=1=>180W/pi->W
+(Int (100W))/100->W
+Locate 9,5,W
+Locate 14,5,"_deg_"
+IfEnd
+Else If A=4
+Then "Punkt _-_ Gerade"
+"P1"
+"x1"?->A
+"y1"?->B
+"z1"?->C
+"Gerade"
+"x0"?->D
+"y0"?->E
+"z0"?->F
+"ax"?->G
+"ay"?->H
+"az"?->I
+A-D->J
+B-E->K
+C-F->L
+KI-LH->M
+LG-JI->N
+JH-KG->O
+G^<2>+H^<2>+I^<2>->P
+M^<2>+N^<2>+O^<2>->Q
+ClrText
+"d=_Sqrt_"
+Locate 4,1,QfracP
+" ="
+Locate 3,2,SqrtQfracP
+Else If A=5
+Then "Gerade _-_ Gerade"
+"Gerade 1"
+"x1"?->A
+"y1"?->B
+"z1"?->C
+"ax"?->D
+"ay"?->E
+"az"?->F
+"Gerade 2"
+"x2"?->G
+"y2"?->H
+"z2"?->I
+"bx"?->J
+"by"?->K
+"bz"?->L
+ClrText
+If (DK=JE) And (DL=JF) And (EL=FK)
+Then If (AK-GK=BJ-HJ) And (BL-HL=CK-IK) And (LA-LG=JC-JI)
+Then "g1 = g2"
+Else "g1 || g2"
+A-G->P
+B-H->Q
+C-I->R
+QL-RK->S
+RJ-PL->U
+PK-QJ->V
+S^<2>+U^<2>+V^<2>->W
+J^<2>+K^<2>+L^<2>->X
+"d=_Sqrt_"
+" "
+Locate 4,2,W
+Locate 3,3,"_/__Sqrt_"
+Locate 5,3,X
+" ="
+Locate 3,4,SqrtWfracX
+IfEnd
+Else EL-FK->M
+FJ-DL->N
+DK-EJ->O
+If MG+NH+OI=MA+NB+OC:Then If M=0
+Then If N=0
+Then (DH+AE-DB-GE)frac(JE-DK)->T
+Else (FG+CD-AF-ID)frac(LD-JF)->T:IfEnd
+Else (IE+BF-CE-HF)frac(KF-LE)->T:IfEnd
+"Schnittpunkt:"
+" "
+"S="
+" "
+Locate 4,2,G+TJ
+Locate 4,3,H+TK
+Locate 4,4,I+TL
+"Winkel="
+cos^-1 Abs ((DJ+EK+FL)frac(Sqrt((D^<2>+E^<2>+F^<2>)(J^<2>+K^<2>+L^<2>)))->W
+sin (pifrac2)=1=>180W/pi->W
+(Int (100W))/100->W
+Locate 9,5,W
+Locate 14,5,"_deg_"
+Else "windschief"
+Abs (M(A-G)+N(B-H)+O(C-I))->Y
+M^<2>+N^<2>+O^<2>->Z
+"d="
+Locate 4,2,Y
+"  _/__Sqrt_"
+Locate 5,3,Z
+" ="
+Locate 3,4,YfracSqrtZ
+IfEnd
+IfEnd
+Else If A=6
+Then "Punkt _-_ Punkt"
+"P1"
+"x1"?->A
+"y1"?->B
+"z1"?->C
+"P2"
+"x2"?->D
+"y2"?->E
+"z2"?->F
+(A-D)^<2>+(B-E)^<2>+(C-F)^<2>->G
+ClrText
+"d=_Sqrt_"
+" ="
+Locate 3,2,SqrtG
+Locate 4,1,G
+"g(P1P2):"
+" "
+"_->_"
+"x="
+Locate 4,5,A
+Locate 4,6,B
+Locate 4,7,C
+Locate 6,6,"_+_t "
+Locate 9,5,D-A
+Locate 9,6,E-B
+Locate 9,7,F-C
+Else "falsch"
+IfEnd
+IfEnd
+IfEnd
+IfEnd
+IfEnd
+IfEnd

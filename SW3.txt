@@ -1,0 +1,9 @@
+'ProgramMode:RUN
+59->A
+16->B
+Lbl A
+Text A,B,"EPISODE IV _-_ A NEW HOPE"
+A-1->A
+If A>1
+Then Goto A
+Else Text A,B,"                        ":Return

@@ -1,0 +1,75 @@
+'ProgramMode:RUN
+ClrText
+"3 PUNKTE X,Y,Z (1)"
+"ODER PARAMETER (2)"
+?->Q
+If Q=1
+Then Goto 1
+Else Goto 2
+IfEnd
+Lbl 1
+" "
+"X1":?->A:"Y1":?->B:"Z1":?->C:"X2":?->D:"Y2":?->E:"Z2":?->F:"X3":?->G:"Y3":?->H:"Z3":?->I
+D-A->D:E-B->E:F-C->F:G-A->G:H-B->H:I-C->I
+Goto 3
+Lbl 2
+"P1":?->A:"P2":?->B:"P3":?->C:"R1":?->D:"R2":?->E:"R3":?->F:"S1":?->G:"S2":?->H:"S3":?->I
+Lbl 3
+ClrText
+"PARAMETERGLEICHUNG:":Locate 1,3,"("
+Locate 2,3,A
+Locate 5,3,")"
+Locate 1,4,"("
+Locate 2,4,B
+Locate 5,4,")"
+Locate 1,5,"("
+Locate 2,5,C
+Locate 5,5,")"
+Locate 6,4,"_+_R"
+Locate 8,3,"("
+Locate 9,3,D
+Locate 12,3,")"
+Locate 8,4,"("
+Locate 9,4,E
+Locate 12,4,")"
+Locate 8,5,"("
+Locate 9,5,F
+Locate 12,5,")"
+Locate 13,4,"_+_S"
+Locate 15,3,"("
+Locate 16,3,G
+Locate 19,3,")"
+Locate 15,4,"("
+Locate 16,4,H
+Locate 19,4,")"
+Locate 15,5,"("
+Locate 16,5,I
+Locate 19,5,")"DispsClrText
+" "
+Locate 1,1,"KOORDINATENGLEICHUNG:"
+1->X:1->Y:1->Z
+X*E->X:A*E->A:D*E->W:G*E->G
+Y*(-)D->Y:B*(-)D->B:E*(-)D->E:H*(-)D->H
+W->D
+A+B->J:D+E->K:G+H->L
+Y*F->U:B*F->B:E*F->W:H*F->H
+Z*(-)E->Z:C*(-)E->C:F*(-)E->F:I*(-)E->I
+W->E
+B+C->M:E+F->N:H+I->O
+X*O->X
+Y*O->Y
+J*O->J
+L*O->W
+Z*(-)L->Z
+U*(-)L->U
+M*(-)L->M
+O*(-)L->O
+Y+U->Y
+Locate 1,3,X
+Locate 8,3,"X _+_"
+Locate 1,4,Y
+Locate 8,4,"Y _+_"
+Locate 1,5,Z
+Locate 8,5,"Z _+_"
+Locate 1,6,(-)(J+M)DispsClrText
+Locate 8,4,"_-__-__-__-__-__-__-__-_":Locate 8,5,"IBY CSXI":Locate 8,6,"_-__-__-__-__-__-__-__-_"
